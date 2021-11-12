@@ -1,28 +1,33 @@
 var tasks = {};
-
-
+var currentDay = document.querySelector("#currentDay");
 
 
 var createTask = function(taskTime, taskName) {
   // create elements that make up a task item
-  var taskDiv = $("<div>").addClass("time text-white border border-dark mb-1");
+  var taskDiv = $("<div>").addClass("time bg-secondary text-white border border-dark mb-1 d-flex flex-row");
   var taskP = $("<p>")
-    .addClass("")
     .text(taskName);
-
+  var button = $("<button>")
+    .addClass("btn btn-primary btn-lg border-left border-dark")
+  var span = $("<span>")
+    .addClass("oi oi-task")
   // append span and p element to parent li
   taskDiv.append(taskP);
+  button.append(span)
+  taskDiv.append(button)
   // append to ul list on the page
+  auditTask(taskDiv);
+
+
   $("#" + taskTime).append(taskDiv);
 };
-
 
 var saveTasks = function() {
   localStorage.setItem("tasksT", JSON.stringify(tasks));
 };
 
-
 var loadTasks = function() {
+  currentDay.textContent = moment().format('MMMM Do YYYY');
   tasks = JSON.parse(localStorage.getItem("tasksT"));
 
   // if nothing in localStorage, create a new object to track all task status arrays
@@ -45,8 +50,6 @@ var loadTasks = function() {
     var time = i.toString();
     var taskName = tasks[time];
     createTask(time, taskName)
-
-    
   }
 };
 
@@ -104,4 +107,4 @@ setInterval(function() {
   $(".time-slot .time").each(function() {
     auditTask($(this));
   });
-}, 600000);
+}, 6000);

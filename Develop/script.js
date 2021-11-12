@@ -5,7 +5,7 @@ var tasks = {};
 
 var createTask = function(taskTime, taskName) {
   // create elements that make up a task item
-  var taskDiv = $("<div>").addClass("time bg-primary text-white border border-dark mb-1");
+  var taskDiv = $("<div>").addClass("time text-white border border-dark mb-1");
   var taskP = $("<p>")
     .addClass("")
     .text(taskName);
@@ -51,8 +51,7 @@ var loadTasks = function() {
 };
 
 var auditTask = function(taskEl) {
-  // get date from task element
-  // console.log(taskEl)
+
   var taskTime = $(taskEl)
     .parent()
     .attr("id")
@@ -61,9 +60,10 @@ var auditTask = function(taskEl) {
 
   $(taskEl).removeClass("list-group-item-warning list-group-item-danger bg-primary");
 
+
   if (moment().isAfter(time)) {
     $(taskEl).addClass("bg-secondary");
-  } else if (Math.abs(moment().diff(time, "hours")) == 0) {
+  } else if (Math.abs(moment().diff(time, "hours")) + 1 == 0) {
     $(taskEl).addClass("bg-danger");
   } else {
     $(taskEl).addClass("bg-success");
@@ -104,4 +104,4 @@ setInterval(function() {
   $(".time-slot .time").each(function() {
     auditTask($(this));
   });
-}, 1000);
+}, 600000);

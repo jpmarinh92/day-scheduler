@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./Develop/style.css">
+    
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -19,7 +19,7 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./Develop/style.css">
     <title>Work Day Scheduler</title>
   </head>
 
@@ -29,11 +29,50 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-    <div class="container">
+    <div class="container" id="container" style="height: 80vh; padding-bottom: 15px">
       <!-- Timeblocks go here -->
+      <div class="time-slot d-flex flex-row " id="9">
+        <h5 class="border-top border-dark" style = "width:9%"> 9 AM</h5>
+      </div>
+      <div class="time-slot d-flex flex-row" id="10">
+        <h5 class="border-top border-dark" style = "width:9%"> 10 AM</h5>
+      </div>
+      <div class="time-slot d-flex flex-row" id="11">
+        <h5 class="border-top border-dark" style = "width:9%"> 11 AM</h5>
+      </div>
+      <div class="time-slot d-flex flex-row" id="12">
+        <h5 class="border-top border-dark" style = "width:9%"> 12 PM</h5>
+      </div>
+      <div class="time-slot d-flex flex-row" id="13">
+        <h5 class="border-top border-dark" style = "width:9%"> 1 PM</h5>
+      </div>
+      <div class="time-slot d-flex flex-row" id="14">
+        <h5 class="border-top border-dark" style = "width:9%"> 2 PM</h5>
+      </div>
+      <div class="time-slot d-flex flex-row" id="15">
+        <h5 class="border-top border-dark" style = "width:9%"> 3 PM</h5>
+      </div>
+      <div class="time-slot d-flex flex-row" id="16">
+        <h5 class="border-top border-dark" style = "width:9%"> 4 PM</h5>
+      </div>
+      <div class="time-slot d-flex flex-row" id="17">
+        <h5 class="border-top border-dark" style = "width:9%"> 5 PM</h5>
+      </div>
+      <!-- <span class="d-block p-2 bg-primary text-white border border-dark mb-1" style="height:10%">d-block</span>
+      <span class="d-block p-2 bg-primary text-white border border-dark mb-1" style="height:10%">d-block</span>
+      <span class="d-block p-2 bg-primary text-white border border-dark mb-1" style="height:10%">d-block</span>
+      <span class="d-block p-2 bg-primary text-white border border-dark mb-1" style="height:10%">d-block</span>
+      <span class="d-block p-2 bg-primary text-white border border-dark mb-1" style="height:10%">d-block</span>
+      <span class="d-block p-2 bg-primary text-white border border-dark mb-1" style="height:10%">d-block</span>
+      <span class="d-block p-2 bg-primary text-white border border-dark mb-1" style="height:10%">d-block</span>
+      <span class="d-block p-2 bg-primary text-white border border-dark mb-1" style="height:10%">d-block</span>
+      <span class="d-block p-2 bg-primary text-white border border-dark mb-1" style="height:10%">d-block</span> -->
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="Develop/script.js"></script>
   </body>
 </html>

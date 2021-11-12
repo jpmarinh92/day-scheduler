@@ -16,10 +16,11 @@ var createTask = function(taskTime, taskName) {
   button.append(span)
   taskDiv.append(button)
   // append to ul list on the page
-  auditTask(taskDiv);
-
+  
 
   $("#" + taskTime).append(taskDiv);
+
+  auditTask(taskDiv);
 };
 
 var saveTasks = function() {
@@ -55,18 +56,19 @@ var loadTasks = function() {
 
 var auditTask = function(taskEl) {
 
+  console.log(taskEl)
+
   var taskTime = $(taskEl)
     .parent()
     .attr("id")
-  
-  var time= moment(taskTime+":00:00", "HH:mm:ss");
+  var time= moment(taskTime+":59:59", "HH:mm:ss");
 
-  $(taskEl).removeClass("list-group-item-warning list-group-item-danger bg-primary");
+  $(taskEl).removeClass("list-group-item-warning list-group-item-danger bg-primary bg-success");
 
 
-  if (moment().isAfter(time)) {
+  if (moment().isAfter(time,"hours")) {
     $(taskEl).addClass("bg-secondary");
-  } else if (Math.abs(moment().diff(time, "hours")) + 1 == 0) {
+  } else if (Math.abs(moment().diff(time, "hours"))  == 0) {
     $(taskEl).addClass("bg-danger");
   } else {
     $(taskEl).addClass("bg-success");
@@ -107,4 +109,4 @@ setInterval(function() {
   $(".time-slot .time").each(function() {
     auditTask($(this));
   });
-}, 6000);
+}, 1800000);
